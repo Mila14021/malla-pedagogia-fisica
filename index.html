@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Malla Curricular - Licenciatura en Educación en Física</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Pedagogía en Física</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,9 +12,15 @@
       margin: 0;
       padding: 20px;
     }
-    h1 {
+    h1, h2 {
       text-align: center;
       color: #333;
+    }
+    .contador {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #007BFF;
     }
     .semestre {
       background: #fff;
@@ -44,12 +51,11 @@
     .ramo:hover {
       background: #d1ecf1;
     }
-    /* Colores por tipo de ramo */
     .ciencias { background: #cce5ff; }
     .educacion { background: #d4edda; }
     .formacion { background: #fff3cd; }
     .practica { background: #f8d7da; }
-    /* Estado aprobado */
+    .profundizacion { background: #e2c2f0; }
     .aprobado {
       text-decoration: line-through;
       opacity: 0.6;
@@ -57,12 +63,11 @@
   </style>
 </head>
 <body>
+  <h1>Malla Pedagogía en Física</h1>
+  <div class="contador" id="contador">Ramos aprobados: 0/52 (0%)</div>
 
-  <h1>Malla Curricular - Licenciatura en Educación en Física</h1>
-
-  <!-- Ejemplo de semestre -->
-  <div class="semestre">
-    <h2>1er Semestre</h2>
+  <!-- Semestres -->
+  <div class="semestre"><h2>1° Semestre</h2>
     <div class="ramo ciencias">Cálculo I</div>
     <div class="ramo educacion">Introducción a la Enseñanza de la Física</div>
     <div class="ramo ciencias">Álgebra y Geometría</div>
@@ -70,8 +75,7 @@
     <div class="ramo formacion">Filosofía: ¿Para qué?</div>
   </div>
 
-  <div class="semestre">
-    <h2>2º Semestre</h2>
+  <div class="semestre"><h2>2° Semestre</h2>
     <div class="ramo ciencias">Cálculo II</div>
     <div class="ramo ciencias">Física Experimental</div>
     <div class="ramo ciencias">Mecánica Clásica I</div>
@@ -79,15 +83,89 @@
     <div class="ramo ciencias">Álgebra Lineal</div>
   </div>
 
-  <!-- Aquí iremos agregando el resto de los semestres -->
+  <div class="semestre"><h2>3° Semestre</h2>
+    <div class="ramo ciencias">Cálculo III</div>
+    <div class="ramo ciencias">Termodinámica y Teoría Cinética</div>
+    <div class="ramo ciencias">Ecuaciones Diferenciales</div>
+    <div class="ramo educacion">Educación y Sociedad</div>
+    <div class="ramo formacion">Electivo Formación Teológica</div>
+  </div>
+
+  <div class="semestre"><h2>4° Semestre</h2>
+    <div class="ramo ciencias">Mecánica Clásica II</div>
+    <div class="ramo ciencias">Electricidad y Magnetismo</div>
+    <div class="ramo practica">Práctica 1: Educación Media en Física</div>
+    <div class="ramo educacion">Desarrollo y Aprendizaje del Adolescente</div>
+    <div class="ramo ciencias">Física Experimental II</div>
+    <div class="ramo formacion">Electivo Formación General</div>
+  </div>
+
+  <div class="semestre"><h2>5° Semestre</h2>
+    <div class="ramo ciencias">Ondas y Óptica</div>
+    <div class="ramo ciencias">Física Moderna</div>
+    <div class="ramo educacion">Desafíos de la Enseñanza y Aprendizaje de la Física</div>
+    <div class="ramo educacion">Diversidad e Inclusión en Educación</div>
+    <div class="ramo formacion">Electivo Formación General</div>
+  </div>
+
+  <div class="semestre"><h2>6° Semestre</h2>
+    <div class="ramo educacion">Currículum</div>
+    <div class="ramo educacion">Diseño de Ambientes de Aprendizaje de la Física</div>
+    <div class="ramo educacion">Didáctica de la Física</div>
+    <div class="ramo practica">Práctica 2: Educación Media</div>
+    <div class="ramo formacion">Electivo Formación General</div>
+  </div>
+
+  <div class="semestre"><h2>7° Semestre</h2>
+    <div class="ramo ciencias">Astronomía</div>
+    <div class="ramo educacion">Evaluación en Educación Media</div>
+    <div class="ramo educacion">Didáctica de la Física II</div>
+    <div class="ramo practica">Práctica 3: en Física</div>
+    <div class="ramo formacion">Electivo Formación General</div>
+  </div>
+
+  <div class="semestre"><h2>8° Semestre</h2>
+    <div class="ramo educacion">Seminario de Investigación en Enseñanza/Aprendizaje de la Física</div>
+    <div class="ramo ciencias">Geografía Física General</div>
+    <div class="ramo educacion">Gestión de Aulas Heterogéneas</div>
+    <div class="ramo practica">Práctica Profesional</div>
+    <div class="ramo formacion">Electivo Formación General</div>
+    <div class="ramo formacion">Electivo Formación General</div>
+  </div>
+
+  <div class="semestre"><h2>9° Semestre</h2>
+    <div class="ramo educacion">Didáctica de la Física III</div>
+    <div class="ramo practica">Práctica Profesional 1: Educación Media en Física</div>
+    <div class="ramo profundizacion">Optativo de Profundización</div>
+    <div class="ramo profundizacion">Optativo de Profundización</div>
+  </div>
+
+  <div class="semestre"><h2>10° Semestre</h2>
+    <div class="ramo educacion">Dimensión Ética de la Profesión Docente</div>
+    <div class="ramo practica">Práctica Profesional 2: Educación Media en Física</div>
+    <div class="ramo profundizacion">Optativo de Profundización</div>
+    <div class="ramo profundizacion">Optativo de Profundización</div>
+  </div>
 
   <script>
-    // Permite marcar un ramo como aprobado al hacer clic
-    document.querySelectorAll('.ramo').forEach(ramo => {
+    const ramos = document.querySelectorAll('.ramo');
+    const contador = document.getElementById('contador');
+
+    function actualizarContador() {
+      const total = ramos.length;
+      const aprobados = document.querySelectorAll('.ramo.aprobado').length;
+      const porcentaje = Math.round((aprobados / total) * 100);
+      contador.textContent = `Ramos aprobados: ${aprobados}/${total} (${porcentaje}%)`;
+    }
+
+    ramos.forEach(ramo => {
       ramo.addEventListener('click', () => {
         ramo.classList.toggle('aprobado');
+        actualizarContador();
       });
     });
+
+    actualizarContador();
   </script>
 </body>
 </html>
