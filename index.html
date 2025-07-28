@@ -165,25 +165,43 @@
     <div class="ramo profundizacion">Optativo de Profundización</div>
   </div>
 
-  <script>
-    const ramos = document.querySelectorAll('.ramo');
-    const contador = document.getElementById('contador');
+<script>
+  const ramos = document.querySelectorAll(".ramo");
+  const contador = document.getElementById("contador");
+  const total = ramos.length;
 
-    function actualizarContador() {
-      const total = ramos.length;
-      const aprobados = document.querySelectorAll('.ramo.aprobado').length;
-      const porcentaje = Math.round((aprobados / total) * 100);
-      contador.textContent = `Ramos aprobados: ${aprobados}/${total} (${porcentaje}%)`;
+  // Cargar progreso desde localStorage
+  const progresoGuardado = JSON.parse(localStorage.getItem("progresoRamos")) || [];
+
+  ramos.forEach((ramo, index) => {
+    if (progresoGuardado.includes(index)) {
+      ramo.classList.add("aprobado");
     }
 
-    ramos.forEach(ramo => {
-      ramo.addEventListener('click', () => {
-        ramo.classList.toggle('aprobado');
-        actualizarContador();
-      });
+    ramo.addEventListener("click", () => {
+      ramo.classList.toggle("aprobado");
+      guardarProgreso();
+      actualizarContador();
     });
+  });
 
-    actualizarContador();
-  </script>
+  function guardarProgreso() {
+    const progresoActual = [];
+    ramos.forEach((ramo, index) => {
+      if (ramo.classList.contains("aprobado")) {
+        progresoActual.push(index);
+      }
+    });
+    localStorage.setItem("progresoRamos", JSON.stringify(progresoActual));
+  }
+
+  function actualizarContador() {
+    const aprobados = document.querySelectorAll(".ramo.aprobado").length;
+    contador.textContent = `Ramos aprobados: ${aprobados}/${total} (${Math.round((aprobados / total) * 100)}%)`;
+  }
+
+  actualizarContador();
+</script>
+
 </body>
 </html>
