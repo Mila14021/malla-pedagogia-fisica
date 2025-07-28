@@ -78,6 +78,37 @@
       text-decoration: line-through;
       opacity: 0.6;
     }
+    .ramo {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 110%; /* Aparece arriba del ramo */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+  width: max-content;
+  max-width: 200px;
+  white-space: pre-wrap;
+  pointer-events: none;
+}
+
+.ramo:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
   </style>
 </head>
 <body>
@@ -94,7 +125,10 @@
   </div>
 
   <div class="semestre"><h2>2° Semestre</h2>
-    <div class="ramo ciencias" title="Requiere Calculo I">Cálculo II</div>
+    <div class="ramo ciencias">
+Calculo II
+  <span class="tooltip">Requiere: Calculo I</span>
+</div>
     <div class="ramo ciencias">Física Experimental</div>
     <div class="ramo ciencias">Mecánica Clásica I</div>
     <div class="ramo educacion">Teoría de la Educación</div>
