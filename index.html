@@ -38,16 +38,34 @@
       margin-top: 0;
     }
     .ramo {
-      display: inline-block;
-      background: #e0e0e0;
-      color: #333;
-      padding: 8px 12px;
-      margin: 5px;
-      border-radius: 6px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+  display: block;
+  background: #e0e0e0;
+  color: #333;
+  padding: 10px 14px;
+  margin: 8px 0;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+  position: relative;
+  padding-left: 40px;
+}
+
+.ramo::before {
+  content: "☐";
+  position: absolute;
+  left: 12px;
+  font-size: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+}
+
+.ramo.aprobado::before {
+  content: "☑";
+  color: green;
+}
+
     .ramo:hover {
       background: #d1ecf1;
     }
