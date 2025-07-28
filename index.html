@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malla Curricular - Licenciatura en Educación en Física</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .semestre {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .semestre h2 {
+      background: #007BFF;
+      color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 18px;
+      margin-top: 0;
+    }
+    .ramo {
+      display: inline-block;
+      background: #e0e0e0;
+      color: #333;
+      padding: 8px 12px;
+      margin: 5px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .ramo:hover {
+      background: #d1ecf1;
+    }
+    /* Colores por tipo de ramo */
+    .ciencias { background: #cce5ff; }
+    .educacion { background: #d4edda; }
+    .formacion { background: #fff3cd; }
+    .practica { background: #f8d7da; }
+    /* Estado aprobado */
+    .aprobado {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Malla Curricular - Licenciatura en Educación en Física</h1>
+
+  <!-- Ejemplo de semestre -->
+  <div class="semestre">
+    <h2>1er Semestre</h2>
+    <div class="ramo ciencias">Cálculo I</div>
+    <div class="ramo educacion">Introducción a la Enseñanza de la Física</div>
+    <div class="ramo ciencias">Álgebra y Geometría</div>
+    <div class="ramo ciencias">Introducción a la Física</div>
+    <div class="ramo formacion">Filosofía: ¿Para qué?</div>
+  </div>
+
+  <div class="semestre">
+    <h2>2º Semestre</h2>
+    <div class="ramo ciencias">Cálculo II</div>
+    <div class="ramo ciencias">Física Experimental</div>
+    <div class="ramo ciencias">Mecánica Clásica I</div>
+    <div class="ramo educacion">Teoría de la Educación</div>
+    <div class="ramo ciencias">Álgebra Lineal</div>
+  </div>
+
+  <!-- Aquí iremos agregando el resto de los semestres -->
+
+  <script>
+    // Permite marcar un ramo como aprobado al hacer clic
+    document.querySelectorAll('.ramo').forEach(ramo => {
+      ramo.addEventListener('click', () => {
+        ramo.classList.toggle('aprobado');
+      });
+    });
+  </script>
+</body>
+</html>
