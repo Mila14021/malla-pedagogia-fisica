@@ -122,6 +122,21 @@ h2 {
   opacity: 1;
 }
 
+.fila {
+  display: flex;
+  justify-content: space-between; /* o center, o space-around */
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.semestre {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
   </style>
 </head>
 <body>
@@ -129,6 +144,7 @@ h2 {
   <div class="contador" id="contador">Ramos aprobados: 0/52 (0%)</div>
 
   <!-- Semestres -->
+  <div class="fila">
   <div class="semestre"><h2>1° Semestre</h2>
     <div class="ramo ciencias">Cálculo I</div>
     <div class="ramo educacion">Introducción a la Enseñanza de la Física</div>
@@ -153,7 +169,8 @@ Mecánica Clásica I
     <div class="ramo educacion">Teoría de la Educación</div>
     <div class="ramo ciencias">Álgebra Lineal</div>
   </div>
-
+  </div>
+    <div class="fila">
   <div class="semestre"><h2>3° Semestre</h2>
     <div class="ramo ciencias">
       Cálculo III
@@ -193,7 +210,8 @@ Mecánica Clásica I
     </div>
     <div class="ramo formacion">Electivo Formación General</div>
   </div>
-
+    </div>
+    <div class="fila">
   <div class="semestre"><h2>5° Semestre</h2>
     <div class="ramo ciencias">
       Ondas y Óptica
@@ -229,7 +247,8 @@ Mecánica Clásica I
     </div>
     <div class="ramo formacion">Electivo Formación General</div>
   </div>
-
+    </div>
+    <div class="fila">
   <div class="semestre"><h2>7° Semestre</h2>
     <div class="ramo ciencias">Astronomía</div>
     <div class="ramo educacion">Evaluación en Educación Media</div>
@@ -244,7 +263,6 @@ Mecánica Clásica I
     </div>
     <div class="ramo formacion">Electivo Formación General</div>
   </div>
-
   <div class="semestre"><h2>8° Semestre</h2>
     <div class="ramo educacion">Seminario de Investigación en Enseñanza/Aprendizaje de la Física</div>
     <div class="ramo ciencias">Geografía Física General</div>
@@ -252,7 +270,8 @@ Mecánica Clásica I
     <div class="ramo formacion">Electivo Formación General</div>
     <div class="ramo formacion">Electivo Formación General</div>
   </div>
-
+    </div>
+    <div class="fila">
   <div class="semestre"><h2>9° Semestre</h2>
     <div class="ramo educacion">
       Didáctica de la Física III
@@ -276,7 +295,7 @@ Mecánica Clásica I
     <div class="ramo profundizacion">Optativo de Profundización</div>
     <div class="ramo profundizacion">Optativo de Profundización</div>
   </div>
-
+    </div>
 <script>
   const ramos = document.querySelectorAll(".ramo");
   const contador = document.getElementById("contador");
