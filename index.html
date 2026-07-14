@@ -6,12 +6,12 @@
   <title>Malla Pedagogía en Física</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Google Fonts: Dancing Script para lettering, Poppins para los ramos -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+  <!-- Fuentes: Fredoka para el título, Poppins para los ramos -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: #E0F7FA; /* Verde agua extra claro */
+      background: #F0FAFA; /* Un fondo casi blanco con un toque sutil de verde agua */
       margin: 0;
       padding: 30px 20px;
       color: #333;
@@ -20,12 +20,11 @@
     h1 {
       font-size: 55px;
       text-align: center;
-      font-family: 'Quicksand', cursive;
+      font-family: 'Fredoka', sans-serif;
       margin-top: 0;
       margin-bottom: 15px;
-      /* Efecto degradado lettering (Morado a Rosa) */
-      color: #283593;
-      text-shadow: 2px 2px 10px rgba(156, 39, 176, 0.15);
+      color: #00796B; /* Un verde agua/teal profundo y elegante para anclar el título */
+      text-shadow: 2px 2px 10px rgba(0, 121, 107, 0.15);
     }
 
     .contador {
@@ -33,15 +32,15 @@
       margin-bottom: 35px;
       font-weight: 600;
       font-size: 16px;
-      color: #283593; /* Morado para combinar */
-      background: rgba(255, 255, 255, 0.8);
+      color: #00796B;
+      background: #ffffff;
       display: inline-block;
       padding: 10px 22px;
       border-radius: 20px;
       position: relative;
       left: 50%;
       transform: translateX(-50%);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
     }
 
     .fila {
@@ -54,32 +53,31 @@
       margin-right: auto;
     }
 
-   .semestre {
-  flex: 1;
-  background: #ffffff;
-  border-radius: 18px;
-  /* Le damos una sombra un poco más amplia y azulada para que resalte más */
-  box-shadow: 0 8px 24px rgba(40, 53, 147, 0.08); 
-  padding: 22px;
-  transition: transform 0.2s;
-}
+    .semestre {
+      flex: 1;
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0, 121, 107, 0.08); /* Sombra en tono verde agua oscuro */
+      padding: 22px;
+      transition: transform 0.2s;
+    }
 
     .semestre:hover {
       transform: translateY(-4px);
     }
 
     .semestre h2 {
-  background: #E8EAF6; /* Un azul índigo pastel, súper suave */
-  color: #283593; /* El mismo azul de tu título principal */
-  padding: 12px;
-  border-radius: 12px;
-  font-size: 17px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  text-align: center;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
+      background: #E0F2F1; /* Verde agua pastel para los títulos de semestre */
+      color: #00695C;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 17px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
 
     .ramo {
       display: flex;
@@ -94,14 +92,14 @@
       font-weight: 500;
     }
 
-    /* Checkbox */
+    /* Checkbox base */
     .ramo::before {
       content: "";
       position: absolute;
       left: 14px;
       width: 18px;
       height: 18px;
-      border: 2px solid #b0bec5;
+      border: 2px solid #B0BEC5;
       border-radius: 50%;
       background-color: white;
       transition: all 0.3s ease;
@@ -112,47 +110,49 @@
       font-weight: bold;
     }
 
-.ramo.aprobado {
-  text-decoration: line-through;
-  color: #B0BEC5 !important; /* Un gris suave para el texto */
-  background: transparent !important; /* Le quitamos el fondo gris sólido */
-  border: 1px dashed #CFD8DC; /* Un borde punteado súper sutil para que no flote en la nada */
-  box-shadow: none;
-}
+    /* Diseño visualmente limpio para los ramos aprobados */
+    .ramo.aprobado {
+      text-decoration: line-through;
+      color: #90A4AE !important; /* Gris azulado suave */
+      background: transparent !important; /* Sin fondo de color para no ensuciar la tarjeta */
+      border: 1px dashed #CFD8DC; /* Bordecito súper tenue */
+      box-shadow: none;
+    }
 
-.ramo.aprobado::before {
-  content: "✓";
-  color: white;
-  /* Cambiamos el verde menta por un azul/lila suave o un verde más apagado */
-  background-color: #81C784; /* Este es un azul índigo suave que pega con el lila */
-  border-color: #81C784;
-}
-    /* === PALETA DE COLORES SOLICITADA === */
-    /* Ciencias: Celestes bebés */
+    .ramo.aprobado::before {
+      content: "✓";
+      color: white;
+      background-color: #4DB6AC; /* Tick en color verde agua intermedio */
+      border-color: #4DB6AC;
+    }
+
+    /* === NUEVA PALETA: TODO EN LA FAMILIA VERDE AGUA Y CELESTE === */
+    
+    /* Ciencias: Celeste bebé */
     .ciencias { background: #E1F5FE; color: #0277BD; }
-    .ramo.ciencias:hover { background: #B3E5FC; transform: scale(1.02); }
+    .ramo.ciencias:hover { background: #B3E5FC; transform: scale(1.02); border: 1px solid transparent; }
 
-    /* Educación: Rosas pasteles */
-    .educacion { background: #FCE4EC; color: #C2185B; }
-    .ramo.educacion:hover { background: #F8BBD0; transform: scale(1.02); }
+    /* Educación: Verde agua / Aqua */
+    .educacion { background: #E0F2F1; color: #00695C; }
+    .ramo.educacion:hover { background: #B2DFDB; transform: scale(1.02); border: 1px solid transparent; }
 
-    /* Formación: Morados */
-    .formacion { background: #F3E5F5; color: #7B1FA2; }
-    .ramo.formacion:hover { background: #E1BEE7; transform: scale(1.02); }
+    /* Formación: Cian pastel clarito */
+    .formacion { background: #E0F7FA; color: #00838F; }
+    .ramo.formacion:hover { background: #B2EBF2; transform: scale(1.02); border: 1px solid transparent; }
 
-    /* Práctica: Verde agua */
-    .practica { background: #E0F2F1; color: #00695C; }
-    .ramo.practica:hover { background: #B2DFDB; transform: scale(1.02); }
+    /* Práctica: Verde menta suave */
+    .practica { background: #E8F5E9; color: #2E7D32; }
+    .ramo.practica:hover { background: #C8E6C9; transform: scale(1.02); border: 1px solid transparent; }
 
-    /* Profundización: Lavanda/Lila */
-    .profundizacion { background: #EDE7F6; color: #512DA8; }
-    .ramo.profundizacion:hover { background: #D1C4E9; transform: scale(1.02); }
+    /* Profundización: Azul hielo / Índigo extra claro */
+    .profundizacion { background: #E8EAF6; color: #283593; }
+    .ramo.profundizacion:hover { background: #C5CAE9; transform: scale(1.02); border: 1px solid transparent; }
 
     /* Tooltip */
     .tooltip {
       visibility: hidden;
       background-color: #fff;
-      color: #555;
+      color: #004D40;
       text-align: center;
       line-height: 1.4;
       padding: 10px 14px;
@@ -168,9 +168,9 @@
       font-weight: 500;
       width: max-content;
       max-width: 220px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 25px rgba(0, 121, 107, 0.12);
       pointer-events: none;
-      border: 1px solid #eee;
+      border: 1px solid #E0F2F1;
     }
 
     .tooltip::after {
@@ -257,9 +257,9 @@
 
     <div class="semestre"><h2>6° Semestre</h2>
       <div class="ramo educacion">Currículum</div>
-      <div class="ramo educacion">Diseño de Ambientes de Aprendizaje de la Física<span class="tooltip">Pre-Requisito: Desafios de la enseñanza y aprendizaje de la física, Termodinamica y teoria cinética</span></div>
-      <div class="ramo educacion">Didáctica de la Física<span class="tooltip">Pre-Requisito: Educación y sociedad, Desarollo y aprendizaje del adolescente<br>Co-Requisito: Curriculum y Practica II</span></div>
-      <div class="ramo practica">Práctica 2: Educación Media<span class="tooltip">Pre-Requisito: Practica I <br>Co-Requisito: Didactica de la Física</span></div>
+      <div class="ramo educacion">Diseño de Ambientes de Aprendizaje de la Física<span class="tooltip">Pre-Requisito: Desafíos de la enseñanza y aprendizaje de la física, Termodinámica y teoría cinética</span></div>
+      <div class="ramo educacion">Didáctica de la Física<span class="tooltip">Pre-Requisito: Educación y sociedad, Desarrollo y aprendizaje del adolescente<br>Co-Requisito: Currículum y Práctica II</span></div>
+      <div class="ramo practica">Práctica 2: Educación Media<span class="tooltip">Pre-Requisito: Práctica I <br>Co-Requisito: Didáctica de la Física</span></div>
       <div class="ramo formacion">Electivo Formación General</div>
     </div>
   </div>
@@ -269,8 +269,8 @@
     <div class="semestre"><h2>7° Semestre</h2>
       <div class="ramo ciencias">Astronomía</div>
       <div class="ramo educacion">Evaluación en Educación Media</div>
-      <div class="ramo educacion">Didáctica de la Física II<span class="tooltip">Pre-Requisito: Didáctica de la Física I<br>Co-Requisito: Practica III</span></div>
-      <div class="ramo practica">Práctica III: en Física<span class="tooltip">Pre-Requisito: Practica II <br>Co-Requisito: Didactica de la Física II</span></div>
+      <div class="ramo educacion">Didáctica de la Física II<span class="tooltip">Pre-Requisito: Didáctica de la Física I<br>Co-Requisito: Práctica III</span></div>
+      <div class="ramo practica">Práctica III: en Física<span class="tooltip">Pre-Requisito: Práctica II <br>Co-Requisito: Didáctica de la Física II</span></div>
       <div class="ramo formacion">Electivo Formación General</div>
     </div>
     
@@ -286,15 +286,15 @@
   <!-- Fila 5 -->
   <div class="fila">
     <div class="semestre"><h2>9° Semestre</h2>
-      <div class="ramo educacion">Didáctica de la Física III<span class="tooltip">Pre-Requisito: Didáctica de la Física II<br>Co-Requisito: Practica Profesional I</span></div>
-      <div class="ramo practica">Práctica Profesional 1: Educación Media en Física<span class="tooltip">Pre-Requisito: Practica III<br>Co-Requisito: Didactica de la Física III</span></div>
+      <div class="ramo educacion">Didáctica de la Física III<span class="tooltip">Pre-Requisito: Didáctica de la Física II<br>Co-Requisito: Práctica Profesional I</span></div>
+      <div class="ramo practica">Práctica Profesional 1: Educación Media en Física<span class="tooltip">Pre-Requisito: Práctica III<br>Co-Requisito: Didáctica de la Física III</span></div>
       <div class="ramo profundizacion">Optativo de Profundización</div>
       <div class="ramo profundizacion">Optativo de Profundización</div>
     </div>
     
     <div class="semestre"><h2>10° Semestre</h2>
       <div class="ramo educacion">Dimensión Ética de la Profesión Docente</div>
-      <div class="ramo practica">Práctica Profesional 2: Educación Media en Física<span class="tooltip">Pre-Requisito: Practica Profesional II</span></div>
+      <div class="ramo practica">Práctica Profesional 2: Educación Media en Física<span class="tooltip">Pre-Requisito: Práctica Profesional II</span></div>
       <div class="ramo profundizacion">Optativo de Profundización</div>
       <div class="ramo profundizacion">Optativo de Profundización</div>
     </div>
