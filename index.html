@@ -20,11 +20,11 @@
     h1 {
       font-size: 55px;
       text-align: center;
-      font-family: 'Dancing Script', cursive;
+      font-family: 'Quicksand', cursive;
       margin-top: 0;
       margin-bottom: 15px;
       /* Efecto degradado lettering (Morado a Rosa) */
-      color: #00BCD4;
+      color: #283593;
       text-shadow: 2px 2px 10px rgba(156, 39, 176, 0.15);
     }
 
@@ -33,7 +33,7 @@
       margin-bottom: 35px;
       font-weight: 600;
       font-size: 16px;
-      color: #00BCD4; /* Morado para combinar */
+      color: #283593; /* Morado para combinar */
       background: rgba(255, 255, 255, 0.8);
       display: inline-block;
       padding: 10px 22px;
@@ -111,20 +111,20 @@
       font-weight: bold;
     }
 
-    .ramo.aprobado::before {
-      content: "✓";
-      color: white;
-      background-color: #A5D6A7; /* Verde suave para el tick */
-      border-color: #A5D6A7;
-    }
-
     .ramo.aprobado {
-      text-decoration: line-through;
-      color: #9e9e9e !important;
-      background: #f5f5f5 !important; /* Gris ultra claro */
-      box-shadow: none;
-    }
+  text-decoration: line-through;
+  color: #90A4AE !important; /* Un gris azulado más sofisticado */
+  background: #F0F4F8 !important; /* Un blanco/gris súper luminoso */
+  box-shadow: none;
+}
 
+.ramo.aprobado::before {
+  content: "✓";
+  color: white;
+  /* Cambiamos el verde menta por un azul/lila suave o un verde más apagado */
+  background-color: #7986CB; /* Este es un azul índigo suave que pega con el lila */
+  border-color: #7986CB;
+}
     /* === PALETA DE COLORES SOLICITADA === */
     /* Ciencias: Celestes bebés */
     .ciencias { background: #E1F5FE; color: #0277BD; }
