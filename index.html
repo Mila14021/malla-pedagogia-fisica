@@ -6,40 +6,44 @@
   <title>Malla Pedagogía en Física</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Google Fonts: Emilys Candy para el título, Poppins para los ramos -->
-  <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Dancing Script para lettering, Poppins para los ramos -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: #A8E6CF; /* Tu color original */
+      background: #E0F7FA; /* Verde agua extra claro */
       margin: 0;
       padding: 30px 20px;
       color: #333;
     }
 
     h1 {
-      color: #FF5A79; /* Un rosa un poco más intenso para mejor contraste */
-      font-size: 50px;
+      font-size: 55px;
       text-align: center;
-      font-family: 'Emilys Candy', cursive;
+      font-family: 'Dancing Script', cursive;
       margin-top: 0;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+      /* Efecto degradado lettering (Morado a Rosa) */
+      background: -webkit-linear-gradient(45deg, #9C27B0, #F48FB1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 10px rgba(156, 39, 176, 0.15);
     }
 
     .contador {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
       font-weight: 600;
-      font-size: 18px;
-      color: #2c3e50;
-      background: rgba(255, 255, 255, 0.6);
+      font-size: 16px;
+      color: #7B1FA2; /* Morado para combinar */
+      background: rgba(255, 255, 255, 0.8);
       display: inline-block;
-      padding: 10px 20px;
+      padding: 10px 22px;
       border-radius: 20px;
       position: relative;
       left: 50%;
       transform: translateX(-50%);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     }
 
     .fila {
@@ -55,22 +59,22 @@
     .semestre {
       flex: 1;
       background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      padding: 20px;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+      padding: 22px;
       transition: transform 0.2s;
     }
 
     .semestre:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
     }
 
     .semestre h2 {
-      background: #D7BDE2;
-      color: #4a235a;
-      padding: 10px;
-      border-radius: 10px;
-      font-size: 18px;
+      background: #F3E5F5; /* Lila muy pastel */
+      color: #7B1FA2;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 17px;
       margin-top: 0;
       margin-bottom: 20px;
       text-align: center;
@@ -83,7 +87,7 @@
       align-items: center;
       padding: 12px 14px 12px 45px;
       margin: 10px 0;
-      border-radius: 10px;
+      border-radius: 12px;
       font-size: 14px;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -91,16 +95,16 @@
       font-weight: 500;
     }
 
-    /* Checkbox personalizado moderno */
+    /* Checkbox */
     .ramo::before {
       content: "";
       position: absolute;
-      left: 12px;
+      left: 14px;
       width: 18px;
       height: 18px;
-      border: 2px solid #a0a0a0;
+      border: 2px solid #b0bec5;
       border-radius: 50%;
-      background-color: transparent;
+      background-color: white;
       transition: all 0.3s ease;
       display: flex;
       align-items: center;
@@ -112,65 +116,72 @@
     .ramo.aprobado::before {
       content: "✓";
       color: white;
-      background-color: #4CAF50;
-      border-color: #4CAF50;
+      background-color: #A5D6A7; /* Verde suave para el tick */
+      border-color: #A5D6A7;
     }
 
     .ramo.aprobado {
       text-decoration: line-through;
-      opacity: 0.5;
-      background: #e0e0e0 !important; /* Gris neutro si está aprobado */
+      color: #9e9e9e !important;
+      background: #f5f5f5 !important; /* Gris ultra claro */
       box-shadow: none;
     }
 
-    /* Colores base por categoría (más suaves) */
-    .ciencias { background: #E3F2FD; color: #1565C0; }
-    .educacion { background: #FFF3E0; color: #E65100; }
-    .formacion { background: #FFF8E1; color: #F57F17; }
-    .practica { background: #E8F5E9; color: #2E7D32; }
-    .profundizacion { background: #F3E5F5; color: #6A1B9A; }
+    /* === PALETA DE COLORES SOLICITADA === */
+    /* Ciencias: Celestes bebés */
+    .ciencias { background: #E1F5FE; color: #0277BD; }
+    .ramo.ciencias:hover { background: #B3E5FC; transform: scale(1.02); }
 
-    /* Colores hover por categoría */
-    .ramo.ciencias:hover { background: #BBDEFB; transform: scale(1.02); }
-    .ramo.educacion:hover { background: #FFE0B2; transform: scale(1.02); }
-    .ramo.formacion:hover { background: #FFECB3; transform: scale(1.02); }
-    .ramo.practica:hover { background: #C8E6C9; transform: scale(1.02); }
-    .ramo.profundizacion:hover { background: #E1BEE7; transform: scale(1.02); }
+    /* Educación: Rosas pasteles */
+    .educacion { background: #FCE4EC; color: #C2185B; }
+    .ramo.educacion:hover { background: #F8BBD0; transform: scale(1.02); }
 
-    /* Tooltip mejorado */
+    /* Formación: Morados */
+    .formacion { background: #F3E5F5; color: #7B1FA2; }
+    .ramo.formacion:hover { background: #E1BEE7; transform: scale(1.02); }
+
+    /* Práctica: Verde agua */
+    .practica { background: #E0F2F1; color: #00695C; }
+    .ramo.practica:hover { background: #B2DFDB; transform: scale(1.02); }
+
+    /* Profundización: Lavanda/Lila */
+    .profundizacion { background: #EDE7F6; color: #512DA8; }
+    .ramo.profundizacion:hover { background: #D1C4E9; transform: scale(1.02); }
+
+    /* Tooltip */
     .tooltip {
       visibility: hidden;
-      background-color: #2c3e50;
-      color: #fff;
+      background-color: #fff;
+      color: #555;
       text-align: center;
       line-height: 1.4;
-      padding: 8px 12px;
-      border-radius: 8px;
+      padding: 10px 14px;
+      border-radius: 10px;
       position: absolute;
       z-index: 10;
       bottom: 120%; 
       left: 50%;
       transform: translateX(-50%) translateY(10px);
       opacity: 0;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       font-size: 12px;
-      font-weight: 400;
+      font-weight: 500;
       width: max-content;
       max-width: 220px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
       pointer-events: none;
+      border: 1px solid #eee;
     }
 
-    /* Flechita del tooltip */
     .tooltip::after {
       content: "";
       position: absolute;
       top: 100%;
       left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
+      margin-left: -6px;
+      border-width: 6px;
       border-style: solid;
-      border-color: #2c3e50 transparent transparent transparent;
+      border-color: #fff transparent transparent transparent;
     }
 
     .ramo:hover .tooltip {
@@ -179,14 +190,14 @@
       transform: translateX(-50%) translateY(0);
     }
 
-    /* Diseño responsivo para celulares */
+    /* Diseño responsivo */
     @media (max-width: 768px) {
       .fila {
         flex-direction: column;
         gap: 15px;
       }
       h1 {
-        font-size: 36px;
+        font-size: 42px;
       }
     }
   </style>
@@ -294,11 +305,9 @@
     const contador = document.getElementById("contador");
     const total = ramos.length;
 
-    // Cargar progreso desde localStorage
     const progresoGuardado = JSON.parse(localStorage.getItem("progresoRamos")) || [];
 
     ramos.forEach((ramo, index) => {
-      // Evitar que el clic en el tooltip marque el ramo accidentalmente
       const tooltip = ramo.querySelector('.tooltip');
       if(tooltip) {
         tooltip.addEventListener('click', (e) => e.stopPropagation());
