@@ -54,14 +54,15 @@
       margin-right: auto;
     }
 
-    .semestre {
-      flex: 1;
-      background: #ffffff;
-      border-radius: 18px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-      padding: 22px;
-      transition: transform 0.2s;
-    }
+   .semestre {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 18px;
+  /* Le damos una sombra un poco más amplia y azulada para que resalte más */
+  box-shadow: 0 8px 24px rgba(40, 53, 147, 0.08); 
+  padding: 22px;
+  transition: transform 0.2s;
+}
 
     .semestre:hover {
       transform: translateY(-4px);
@@ -111,7 +112,7 @@
       font-weight: bold;
     }
 
-    .ramo.aprobado {
+  .ramo.aprobado {
   text-decoration: line-through;
   color: #90A4AE !important; /* Un gris azulado más sofisticado */
   background: #F0F4F8 !important; /* Un blanco/gris súper luminoso */
